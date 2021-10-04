@@ -1,0 +1,646 @@
+C# sharp
+
+programming language h
+microsoft ne bnai thi
+.net framework pr run krti h
+-
+
+Use:
+Games
+Console application
+windows bnane me
+mob apps bhi bna skte h
+web apps
+-
+
+.Net: 
+
+.net framework sb me chlta h(linux+max+windows)
+open source h
+windows me chlne k lye bna tha
+then linux and mac me bhi chlne lga
+-
+
+.net Architecture
+google krke dikhao
+
+3 hote h
+
+1. .net
+2. .net framework
+3. .net core
+------------------------------------------------
+
+
+namespace Hello{
+ class Program{
+  static void Main(string[] args){
+	
+	Console.WriteLine("Hello World");
+	Itna dikhao
+	
+	Console.Write("Hello World");
+	Console.WriteLine("Hello Bilal");
+	Console.ReadLine();
+---
+
+	Comments
+	//
+	/*   */
+---
+
+Variables:
+Containers hote h jo value ko store krte h
+
+	int bilal = 24;
+	Console.WriteLine(bilal);
+	Console.WriteLine("Hello " + bilal);
+	Console.Readline();
+
+-----
+
+Data Types is c#
+
+0. Integer	|	4 bytes
+1. Long		|	8 bytes
+2. Float	|	4 bytes
+3. Double	|	8 bytes	 (Gives 15 decimal tak ka result)
+4. Char		|	2 bytes
+5. String	|	2 bytes per character
+6. Boolean	|	1 bit
+-
+
+1 byte == 8 bit
+
+1. int a = 11;
+2. float b = 1.2F;
+3. double c = 1.3;  or c = 1.3D;
+4. char d = 'B';		# Single quotes
+5. string str = "Bilal";
+6. bool flag = true;
+
+**ReadLine jo h wo string return krta h
+
+-----
+
+ctrl+kc for comment
+
+
+CW	-	Console.WriteLine();
+CR	-	Console.ReadLine();
+
+
+Type casting:
+-------------
+
+Two(2) types :
+
+1. Implicit Casting - Khud ki kr deta h apn ko nhi krna padta
+
+	char to int to long to float to double
+	
+	int x = 3;
+	double y = x;
+	Console.WriteLine(x);
+	Console.WriteLine(y);
+	Console.ReadLine();
+	
+	# int se double ho skta h but double se int nhi ho skta
+
+	int x = 3;
+	double y = x;
+	int z = y;
+	Console.WriteLine(x);
+	Console.WriteLine(y);
+	Console.ReadLine();
+
+	int z1 = 'a';
+	Console.WriteLine(z);
+	Console.ReadLine();
+
+
+2. Explicit Casting - apn ko krna padta h
+
+	int a = (int) 3.5;
+	double d1 = (double) 3;
+	Console.WriteLine(d1);
+	Console.ReadLine();
+
+3. ek tarika or hota h
+Typecasting using Methods
+	
+	float  var = 3.55;	#abi error ayga
+	float  var = Convert.ToInt32(3.55);
+
+	Or bhi hote h
+	Convert.ToDouble
+	Convert.ToString
+	Convert.ToInt64
+	
+	int b = int.Parse("43"); //x = 43
+
+	int x = Convert.ToInt32("43"); // x = 43;
+	int x = Convert.ToInt32(null); // x = 0;
+	int x = Convert.ToInt32("abc"); // throws FormatException
+
+	int x = int.Parse("43"); // x = 43;
+	int x = int.Parse(null); // x throws an ArgumentNullException
+	int x = int.Parse("abc"); // throws an FormatException
+-------
+
+Agr user se input lena h to
+
+	string input = Console.ReadLine();
+	Console.WriteLine(input);
+	Console.ReadLine();
+
+	Console.WriteLine("Enter your name");
+	string name = Console.ReadLine();
+	Console.WriteLine("Hey " + name);
+
+	Console.WriteLine("Enter quantity");
+	string quantity = Console.ReadLine();
+	Console.WriteLine("Quantity : " + quantity);
+
+	#quantity str me milega, int me convert krna ho to
+	Console.WriteLine("Quantity : " + quantity + 1);
+	#abi ans glt ayga
+
+	#isse sahi ayga
+	Console.WriteLine("Quantity : " + 
+		(Convert.ToInt32(quantity)) + 1));
+
+	Console.ReadLine();
+
+-----
+
+Operators in C Sharp:
+1. Arithmetic Operators (+ - * /)
+	CW("The value of a+b is: " + (a+b));
+	CR;
+-
+
+2. Assignment
+	int a = 4
+	int b = a;
+	b += 4;
+	b *= 4;
+	b++;
+	b--;	
+
+	CW(b)
+	CR;
+-
+
+3. Logical Operators (OR, AND, Not) (||, &&, !)
+	CW(true && false);
+	CW(true && true);
+	CW(false && false);
+	CR;
+
+	CW(true || false);
+	CW(true || true);
+	CW(tfalse || false);
+	CR;
+	
+	CW(!false);
+	CW(!true);
+	CR;
+-	
+
+4. Comparison (<, >, <=, >=, ==, !=)
+	CW(324 > 555);
+	CW(324 <= 555);
+	CW(324 >= 555);
+	CW(324 > 555);
+	CW(324 != 555);
+	CW(324 == 555);
+	CR;
+------------
+
+Math class in C sharp:
+	int a = Math.Max(34, 345);
+	int a1 = Math.Min(34, 345);
+	int a2 = Math.Abs(-31);
+	double a3 = Math.sqrt(36);
+	
+	CW(a);
+	CW(a1);
+	CW(a2);
+	CW(a3);
+	CR;
+-------------
+
+Strings in C Sharp:
+	string str = "Hello World this is Bilal";
+	CW(str.Length);
+	CW(str.ToUpper());
+	CW(str.ToLower());
+	CW(str + " You are nice.");
+	CW(string.Concat(str, "You are nice."));
+	
+String Interpolation:
+	string name = Console.ReadLine();
+	string age = Console.ReadLine();
+	Console.WriteLine($"Your name is {name} and your age is {age}");
+	CR;
+
+Indexing:	
+	string hello = "Hello World this is Bilal";
+	CW(hello[0]);
+	CW(hello.IndexOf("Hello"));	#0 se start ho rha h
+	CW(hello.IndexOf("is"));
+	CW(hello.Substring(3));	
+	CW(hello);
+	CR;
+
+Escape Sequence Characters:
+	string hello1 = "Hello World this \" is Bilal";
+	\n
+	\t
+------------
+
+If else
+	int age = 16;
+	if(age < 10){
+		CW("One");
+	}
+	else if(age < 18){
+		CW("Two");
+	}
+	else{
+		CW("Three");
+	}
+	CR;
+-------
+
+Switch Case:
+
+	int age1 = 50;
+	switch(age){
+		case 18:
+			CW("18");
+			break;
+
+		case 20;
+			CW("20");
+			break;
+
+		default:
+			CW("Enjoy");
+			break;
+	}
+	CR;
+---------------
+
+Loop in C Sharp:
+1. While
+2. Do While
+3. For
+-
+
+1.
+	int i = 0;
+	while(i<5){
+		CW(i);
+		i++;
+	}
+	CR;
+-
+
+2.
+	int j = 0;
+	do{
+		CW(i);
+		j++;
+	}while(j>5);
+	CR;
+-
+
+3.
+	for(int i=0; i<5; i++){
+		CW(i);
+	}
+	CR;
+-
+	for(int i=0; i<5; i++){
+		if(i == 3){
+			continue;
+		}
+		if(i == 3){
+			break;
+		}
+		CW(i);
+	}
+	CR;
+---------------
+
+Arrays in C#:
+
+	int[] arr = {1,2,3,4,5};
+
+	//for(int i=0; i<5; i++){
+	for(int i=0; i<arr.length; i++){
+		CW(arr[i]);
+	}
+	CW(a);
+--
+
+agr array ki value input se leni h to
+
+	int n = CR;
+	int[] arr = new int[n]
+	for(int i=0; i<arr.length; i++){
+		arr[i] = CR;
+	}	
+	for(int i=0; i<arr.length; i++){
+		CW(arr[i]);
+	}
+	CR;
+--------
+
+2D array:
+	int[,] arr1 = new int[3,3];
+	int n = 1;
+
+nested for loop
+	for(int i=0; i<3; i++){
+	 for(int j=0; j<3; j++){
+		a[i,j] = n;
+		n = n+1;
+	 }
+	}
+-
+For prininting value
+	// Col
+	for(int i=0; i<3; i++){
+	 // row
+	 for(int j=0; j<3; j++){
+		Console.Write(a[i,j]+" ");
+	 }
+	 CR;
+	}
+
+-----------------------
+
+ArrayList:
+
+// Create a list of strings
+       ArrayList al = new ArrayList();
+       al.Add("Bruno");
+       al.Add("Husky");
+       al.Add(10);
+       al.Add(10.10);
+ 
+       // Iterate list element using foreach loop
+       foreach(var names in al)
+       {
+           Console.WriteLine(names);
+       }
+
+-----------------------
+
+Methods / Functions in C#:
+
+main se phle
+
+	static void Greet(){
+		Console.WriteLine("Good Morning");
+	}
+
+main me
+	Greet();
+	CR;
+--
+
+void nhi chahiye to
+	static int Greet(){
+		Console.WriteLine("Good Morning");
+		return 1;
+	}
+--
+value dena ho to
+	static void Greet(string name){
+		Console.WriteLine("Good Morning " + name);
+	}
+
+main me
+	Greet("Bilal");
+	CR;
+-----
+
+Average fn
+
+main se phle
+	static float Average(int a, int b, int c){
+		float sum = a+b+c;
+		return sum / 3;
+	}
+
+	static float Average(int a, int b){
+		float sum = a+b;
+		return sum / 2;
+	}
+
+main me
+	CW(Average(2,6,8));
+	CW(Average(2,6));
+	CR;
+
+2 argument doge to 2 lega,
+3 doge to 3 wale lega
+
+Isi bolte h Method Overloading
+-----
+
+OOP in C#:
+
+Class is a template/blue print
+Object are specific instances of a class
+-
+
+Hello pr right click kro
+add
+new item
+Class
+Player.cs
+Add
+
+Class ban jaygi
+
+OOPs - apn apna data typ bna lete h, int float ki trha
+easy kr deta h
+Class banata h
+
+Game bna rhe h to, usme player h
+uski conditions
+
+class Player
+ {
+	public string name = "Bilal";
+	public int health = 83;
+	
+	#itna chala k dikhao then
+	
+	public void setHealth(int h){
+		health = h;
+	}
+
+ }
+
+
+main wali file me ajao
+	Player tommy = new Player();
+	CW(tommy.health);
+	tommy.setHealth(56);
+	CW(tommy.health);
+	CR;
+----------------
+
+agr public ki jagha private kr denge to value nhi milegi
+directly access nhi kr payenge
+
+agr access krna h to functions ke through kr skte h
+-
+
+Access Modifier kehte h ise
+-
+
+class Player
+ {
+	public string name = "Bilal";
+	private int health = 83;
+	
+	public int getHealth(){
+		return health;
+	}
+	
+	public void setHealth(int h){
+		health = h;
+	}
+
+ }
+
+
+main wali file me ajao
+	Player tommy = new Player();
+	CW(tommy.getHealth());
+	tommy.setHealth(56);
+	CW(tommy.getHealth());
+	CR;
+--
+
+ek or hota h
+Protected:
+
+Inheritance me use hota h
+ek class se dusri class bna rhe ho 
+to same class ko use kr skte h
+or uski property or badha skte h
+(old+new) dono ajaynegi new class me
+
+--------------------------------------------------
+
+inheritance:
+jb hme multiple classes k sath kaam krna hota h
+
+jb me ek class k properties dusri class me derive kr skta hu
+waha pr inheritance use krte h
+-
+
+new file bna lo class wali
+add krke
+
+My_Parent
+
+	class My_Parent{
+		public string s1 = "I am parent";
+		
+		public void show_parent(){
+			CW(s1);
+		}
+	}
+-
+
+ek or bna lo class file
+
+My_Child
+
+		ye inherit kr rha h parent ki chizo ko
+class My_Child : My_Parent{
+		public string s2 = "I am child";
+
+		public void show_child(){
+			CW(s2);
+		}
+	}
+--
+
+ab main me ajao
+
+	Main{
+		My_Child c1 = new My_Child();
+		// is c1 show parent and show child
+			dono honge
+	
+		c1.show_child();
+		c1.show_parent();
+	}
+
+
+  }
+
+ }
+}
+---------------------------------------------------------------
+
+Interview Ques:
+
+Ques.1 D/f b/w C3 and C?
+Ans.1 C is procedural language and C# is OOP language
+C# support automatic garbage collection by CLR and C does not.
+C# need a .NET framework to execute while C is platform-
+	agnostinc language.
+--
+
+Ques.2 CLR(Common Language Runtime)?
+Ans.2 The architecture of CLR handles memory management,garbage 
+	collection, security handling.
+
+Ques.3 Garbage collection in C#? 
+Ans.3 It is a process of freeing up memory that is captured by
+	unwanted objects
+
+Ques.4 Types of Classes in C#?
+Ans.4 4 types
+	(i)	Static Class
+		define by static and inheritance not allowed
+		Cannot create object for a static class
+
+	(ii)	Partial Class:
+		define by partial
+
+	(iii)	Abstract Class
+
+	(iv)	Sealed Class
+
+
+https://www.interviewbit.com/c-sharp-interview-questions/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
